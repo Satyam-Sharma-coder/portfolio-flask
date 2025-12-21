@@ -1,0 +1,54 @@
+.toggle-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+.toggle-link:hover {
+  text-decoration: none;
+}
+
+.toggle-link i {
+  transition: transform 0.2s ease;
+}
+
+.toggle-link[aria-expanded="true"] i {
+  transform: rotate(90deg);
+}
+
+.review-card {
+  border-radius: 10px;
+}
+
+/* LinkedIn badge overlay */
+.linkedin-badge {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  background-color: #0a66c2;
+  color: white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.linkedin-badge:hover {
+  background-color: #004182;
+  color: white;
+  text-decoration: none;
+}
+
+.project-img {
+  width: 100%;
+  height: 220px;          /* same height for all */
+  object-fit: cover;     /* crop instead of stretch */
+  border-radius: 6px;
+}

@@ -1,0 +1,202 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+  <!-- ✅ HERO SECTION -->
+  <div class="jumbotron text-center">
+
+    <!-- Quote -->
+    <div class="mb-4">
+  <blockquote class="blockquote text-center">
+    <p class="h5 font-weight-bold">
+      “Choose a job you love, and you will never have to work a day of your life.”
+    </p>
+  </blockquote>
+</div>
+
+    <!-- Name -->
+    <h1 class="display-4 mb-2">Satyam Sharma</h1>
+
+    <!-- Aspiration -->
+    <p class="lead">
+      Aspiring Software Engineer | Backend & Problem Solving
+    </p>
+
+    <hr class="my-4">
+
+    <!-- Short description -->
+    <p>
+      Passionate about building scalable software and data-driven applications.
+    </p>
+
+    <!-- Action buttons -->
+    <div class="d-flex justify-content-center flex-wrap mt-4">
+
+      <a class="btn btn-primary btn-lg mr-2 mb-2"
+         href="{{ url_for('projects') }}">
+        View Projects
+      </a>
+
+      <a class="btn btn-outline-dark btn-lg mr-2 mb-2"
+         href="{{ url_for('leetcode') }}">
+        LeetCode Profile
+      </a>
+
+      <a class="btn btn-outline-secondary btn-lg mb-2"
+         href="https://drive.google.com/file/d/1ZaVfcBre3aow5dsw3fEI3qJ0i7F4u5U3/view?usp=sharing"
+         target="_blank">
+        <i class="fas fa-download mr-2"></i>
+        Download CV
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- ✅ QUICK STATS (3 CARDS) -->
+  <div class="row text-center">
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">💻 DSA Solved</h5>
+          <p class="card-text display-4">400+</p>
+          <p class="text-muted">Across LeetCode & GFG</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">🏆 Achievements</h5>
+          <p class="card-text display-4">5+</p>
+          <p class="text-muted">SIH Rank, Patent, Hackathons</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">🚀 Projects</h5>
+          <p class="card-text display-4">6+</p>
+          <p class="text-muted">Web, Data & DSA Based</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ ABOUT SECTION -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2>About Me</h2>
+      <p>
+        I am a Computer Science Engineering student at Galgotias University (2026),
+        with strong interest in Data Structures, Backend Development, APIs, and
+        Data Analytics. I have experience in Python, Java, Flask, SQL, and real-world
+        testing through Nothing Technologies.
+      </p>
+    </div>
+  </div>
+
+  <!-- ✅ SKILLS SECTION -->
+  <div class="row mt-4">
+
+    <div class="col-md-6">
+      <h3>Technical Skills</h3>
+      <ul>
+        <li>Languages: Java, Python</li>
+        <li>Backend: Flask</li>
+        <li>Database: MySQL, SQLite</li>
+        <li>Core CS: OOPs, DBMS, OS, CN</li>
+        <li>DSA: Arrays, Linked List, Trees, Graphs, Tries</li>
+      </ul>
+    </div>
+
+    <div class="col-md-6">
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li>Git & GitHub</li>
+        <li>LeetCode, GFG, CodeChef</li>
+        <li>VS Code</li>
+        <li>Postman</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ✅ FEATURED PROJECTS -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h2>Featured Projects</h2>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">SortViz</h5>
+          <p class="card-text">
+            Sorting algorithm visualizer with animations and authentication.
+          </p>
+          <span class="badge badge-primary">React</span>
+          <span class="badge badge-secondary">Node</span>
+          <span class="badge badge-success">MongoDB</span>
+
+          <div class="mt-3 d-flex justify-content-between">
+            <a href="https://github.com/Satyam-Sharma-coder/dsa-algo"
+               target="_blank"
+               class="btn btn-outline-dark btn-sm">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+
+            <a href="https://dsa-algo-v6wf.vercel.app/"
+               target="_blank"
+               class="btn btn-outline-primary btn-sm">
+              <i class="fas fa-arrow-up-right-from-square"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Sustainable Residue Platform</h5>
+          <p class="card-text">
+            Platform to utilize agricultural waste for eco-products.
+          </p>
+          <span class="badge badge-primary">HTML</span>
+          <span class="badge badge-secondary">CSS</span>
+          <span class="badge badge-success">JS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">LeetCode Analytics (Flask)</h5>
+          <p class="card-text">
+            Live LeetCode data fetch using GraphQL with dashboard view.
+          </p>
+          <span class="badge badge-primary">Flask</span>
+          <span class="badge badge-secondary">GraphQL</span>
+          <span class="badge badge-success">Pandas</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

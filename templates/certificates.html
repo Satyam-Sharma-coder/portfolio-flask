@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+
+{% block title %}Certificates{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+  <!-- ================= HEADER ================= -->
+  <div class="text-center mb-5">
+    <h2>Certificates</h2>
+    <p class="text-muted">
+      Recognized learning milestones that strengthened my technical foundation.
+    </p>
+    <hr class="w-50 mx-auto">
+  </div>
+
+  <!-- ================= CERTIFICATE 1 ================= -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+
+      <h4 class="mb-3">Data Science — Digital Skills Readiness Program</h4>
+
+      <p class="text-muted mb-1">
+        <strong>Organization:</strong> TalentNext (Wipro Limited)
+      </p>
+
+      <p class="text-muted mb-1">
+        <strong>Duration:</strong> Jul 2025 – Oct 2025
+      </p>
+
+      <p class="text-muted mb-3">
+        <strong>Certificate ID:</strong> TNext_SE_25_DS_250540731
+      </p>
+
+      <div class="row align-items-center">
+        <div class="col-md-5 mb-3">
+          <img src="{{ url_for('static', filename='certificates/datascience.jpg') }}"
+               class="img-fluid rounded shadow"
+               alt="Data Science Certificate">
+        </div>
+
+        <div class="col-md-7">
+          <h6>Objective</h6>
+          <p class="text-muted">
+            To build strong fundamentals in data science and develop
+            analytical thinking for real-world problem solving.
+          </p>
+
+          <h6>Learning Outcomes</h6>
+          <ul class="text-muted">
+            <li>Data analysis and preprocessing concepts</li>
+            <li>Hands-on exposure to data-driven decision making</li>
+            <li>Applied Python for analytics and insights</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CERTIFICATE 2 ================= -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+
+      <h4 class="mb-3">Database Programming with SQL</h4>
+
+      <p class="text-muted mb-1">
+        <strong>Organization:</strong> Oracle Academy
+      </p>
+
+      <p class="text-muted mb-3">
+        <strong>Completed:</strong> January 2024
+      </p>
+
+      <div class="row align-items-center">
+        <div class="col-md-5 mb-3">
+          <img src="{{ url_for('static', filename='certificates/sql.jpg') }}"
+               class="img-fluid rounded shadow"
+               alt="Oracle SQL Certificate">
+        </div>
+
+        <div class="col-md-7">
+          <h6>Objective</h6>
+          <p class="text-muted">
+            To understand relational database systems and efficiently
+            manage data using structured queries.
+          </p>
+
+          <h6>Learning Outcomes</h6>
+          <ul class="text-muted">
+            <li>Writing optimized SQL queries</li>
+            <li>Understanding joins, subqueries, and constraints</li>
+            <li>Practical database design fundamentals</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CERTIFICATE 3 ================= -->
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+
+      <h4 class="mb-3">Python Programming</h4>
+
+      <p class="text-muted mb-1">
+        <strong>Organization:</strong> GUVI (Google for Education Partner)
+      </p>
+
+      <p class="text-muted mb-3">
+        <strong>Completed:</strong> August 2023
+      </p>
+
+      <div class="row align-items-center">
+        <div class="col-md-5 mb-3">
+          <img src="{{ url_for('static', filename='certificates/python.png') }}"
+               class="img-fluid rounded shadow"
+               alt="Python Certificate">
+        </div>
+
+        <div class="col-md-7">
+          <h6>Objective</h6>
+          <p class="text-muted">
+            To build a strong programming foundation and logical thinking
+            using Python.
+          </p>
+
+          <h6>Learning Outcomes</h6>
+          <ul class="text-muted">
+            <li>Core Python syntax and programming concepts</li>
+            <li>Problem-solving using Python</li>
+            <li>Hands-on experience with functions and data structures</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= CLOSING ================= -->
+  <div class="text-center mb-5">
+    <hr class="w-50 mx-auto">
+    <p class="lead font-italic">
+      These certifications reflect my commitment to continuous learning
+      and strengthening my engineering fundamentals.
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}

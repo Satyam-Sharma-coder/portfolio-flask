@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+
+{% block title %}LeetCode{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+  <!-- ✅ 1. TITLE -->
+  <h2 class="text-center mb-4">📊 LeetCode Dashboard — {{ data.username }}</h2>
+
+
+  <!-- Action Section -->
+<div class="d-flex justify-content-center flex-wrap align-items-center mb-4">
+
+  <!-- Analyze LeetCode Profile (External Tool) -->
+  <a href="https://leetcode-scapper-for-all.onrender.com/"
+     target="_blank"
+     class="btn btn-primary mr-3 mb-2">
+    Analyze Any LeetCode Profile
+  </a>
+
+  <!-- My LeetCode Profile -->
+  <a href="https://leetcode.com/satyam15890/"
+     target="_blank"
+     class="btn btn-outline-dark mb-2">
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png"
+         alt="LeetCode"
+         width="20"
+         class="mr-2">
+
+    My LeetCode Profile
+  </a>
+
+</div>
+
+  <!-- ✅ 2. OFFICIAL ACTIVITY SUMMARY -->
+  <div class="row mt-5 text-center d-flex align-items-stretch">
+
+    <div class="col-md-4 mb-3 d-flex">
+      <div class="card shadow-sm border-success w-100 h-100">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h5>🔥 Official Streak</h5>
+          <p class="display-4 text-success">{{ data.streak }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3 d-flex">
+      <div class="card shadow-sm border-primary w-100 h-100">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h5>📅 Total Active Days</h5>
+          <p class="display-4 text-primary">{{ data.total_active_days }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3 d-flex">
+      <div class="card shadow-sm border-warning w-100 h-100">
+        <div class="card-body d-flex flex-column justify-content-center">
+          <h5>📆 Active Years</h5>
+          <p class="h4 text-warning">{{ data.active_years }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ 3. EASY / MEDIUM / HARD SOLVED -->
+  <div class="row text-center mt-5">
+    {% for diff in ['Easy','Medium','Hard'] %}
+    <div class="col-md-4 mb-3">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h5>{{ diff }}</h5>
+          <p class="display-4">{{ data.solved[diff] }}</p>
+          <p class="text-muted">Accuracy: {{ data.accuracy[diff] }}%</p>
+          <p class="font-weight-bold text-primary">
+            Total Submissions: {{ data.total_submissions[diff] }}
+          </p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ✅ 4. SKILL STATS -->
+  <div class="row mt-5 d-flex align-items-stretch">
+    <div class="col-md-12">
+      <h3 class="text-center mb-4">🧠 Skill-wise Problem Solving</h3>
+    </div>
+
+    {% for level in ['fundamental','intermediate','advanced'] %}
+    <div class="col-md-4 mb-3 d-flex">
+      <div class="card shadow-sm w-100">
+        <div class="card-body">
+          <h5 class="text-center">{{ level.capitalize() }}</h5>
+          <table class="table table-sm mt-3">
+            <thead>
+              <tr><th>Tag</th><th>Solved</th></tr>
+            </thead>
+            <tbody>
+              {% for tag in data.skills[level] %}
+              <tr>
+                <td>{{ tag.tagName }}</td>
+                <td>
+                  <span class="badge badge-success">{{ tag.problemsSolved }}</span>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ✅ 5. CONTEST STATS -->
+  <div class="row mt-5 text-center">
+    <div class="col-md-3 mb-3"><div class="card shadow-sm border-success"><div class="card-body"><h6>Contests</h6><p class="h4 text-success">{{ data.contest.attendedContestsCount }}</p></div></div></div>
+    <div class="col-md-3 mb-3"><div class="card shadow-sm border-primary"><div class="card-body"><h6>Rating</h6><p class="h4 text-primary">{{ data.contest.rating }}</p></div></div></div>
+    <div class="col-md-3 mb-3"><div class="card shadow-sm border-warning"><div class="card-body"><h6>Global Rank</h6><p class="h4 text-warning">{{ data.contest.globalRanking }}</p></div></div></div>
+    <div class="col-md-3 mb-3"><div class="card shadow-sm border-danger"><div class="card-body"><h6>Top %</h6><p class="h4 text-danger">{{ data.contest.topPercentage }}</p></div></div></div>
+  </div>
+
+  <!-- 📈 LIVE CONTEST RATING GRAPH -->
+<div class="row mt-5">
+  <div class="col-md-12">
+    <h3 class="text-center mb-3">📈 Contest Rating Progress</h3>
+    <canvas id="ratingChart"></canvas>
+  </div>
+</div>
+
+<script>
+const labels = [
+  {% for c in data.contest_history %}
+    "{{ c.contest.title }}",
+  {% endfor %}
+];
+
+const ratings = [
+  {% for c in data.contest_history %}
+    {{ c.rating }},
+  {% endfor %}
+];
+
+new Chart(document.getElementById('ratingChart'), {
+  type: 'line',
+  data: {
+    labels: labels,
+    datasets: [{
+      label: 'Contest Rating',
+      data: ratings,
+      tension: 0.4,
+      fill: true
+    }]
+  }
+});
+</script>
+
+
+  <!-- ✅ 6. CONTEST HISTORY -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h3 class="text-center mb-3">🏆 Contest History</h3>
+      <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+          <tr><th>Contest</th><th>Attended</th><th>Solved</th><th>Rating</th><th>Rank</th></tr>
+        </thead>
+        <tbody>
+          {% for c in data.contest_history %}
+          <tr>
+            <td>{{ c.contest.title }}</td>
+            <td>{% if c.attended %}✅{% else %}❌{% endif %}</td>
+            <td>{{ c.problemsSolved }}/{{ c.totalProblems }}</td>
+            <td>{{ c.rating }}</td>
+            <td>{{ c.ranking }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ✅ 7. BADGES -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h3 class="text-center mb-4">🏅 Earned Badges</h3>
+    </div>
+    {% for badge in data.badges %}
+    <div class="col-md-3 mb-4">
+      <div class="card text-center shadow-sm p-2" style="background-image: url('{{ badge.medal.config.iconGifBackground }}'); background-size: cover;">
+        <img src="{{ badge.medal.config.iconGif }}" class="mx-auto" style="width:80px;">
+        <div class="card-body">
+          <h6>{{ badge.displayName }}</h6>
+          <small class="text-muted">{{ badge.creationDate }}</small>
+          <p class="mt-2"><span class="badge badge-primary">{{ badge.category }}</span></p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- ✅ 8. RECENT SUBMISSIONS (LAST) -->
+  <div class="row mt-5">
+    <div class="col-md-12">
+      <h4>✅ Recent Accepted Submissions</h4>
+      <table class="table table-bordered mt-3 table-hover">
+        <thead class="thead-dark">
+          <tr><th>Title</th><th>Problem Link</th><th>Timestamp</th></tr>
+        </thead>
+        <tbody>
+          {% for q in data.recent %}
+          <tr>
+            <td>{{ q.title }}</td>
+            <td><a href="https://leetcode.com/problems/{{ q.titleSlug }}/" target="_blank">{{ q.titleSlug }}</a></td>
+            <td>{{ q.timestamp }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+  <h2 class="mb-4">Projects</h2>
+
+  <!-- ===================================================== -->
+  <!-- PROJECT 1 : SORTING VISUALIZER -->
+  <!-- ===================================================== -->
+
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+
+      <div class="d-flex justify-content-between align-items-center mb-1">
+  <h4 class="mb-0">Sorting Visualizer</h4>
+
+  <div class="project-links">
+    <a href="https://dsa-algo-v6wf.vercel.app/"
+       target="_blank"
+       class="text-dark mr-3"
+       title="Live Demo">
+      <i class="fas fa-external-link-alt"></i>
+      <span class="ml-1">Live</span>
+    </a>
+
+    <a href="https://github.com/Satyam-Sharma-coder/dsa-algo"
+       target="_blank"
+       class="text-dark"
+       title="GitHub Repository">
+      <i class="fab fa-github"></i>
+      <span class="ml-1">GitHub</span>
+    </a>
+  </div>
+</div>
+
+<p class="text-muted mb-4">Algorithm Visualization Tool</p>
+
+
+      <!-- Problem Statement -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#sv-problem">
+          <i class="fas fa-chevron-right"></i>
+          Problem Statement
+        </a>
+
+        <div class="collapse mt-2" id="sv-problem">
+          <p class="text-muted">
+            Students often struggle to understand how sorting algorithms work
+            internally because textbook explanations lack visual representation
+            of comparisons and swaps.
+          </p>
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#sv-solution">
+          <i class="fas fa-chevron-right"></i>
+          Solution
+        </a>
+
+        <div class="collapse mt-2" id="sv-solution">
+          <p class="text-muted">
+            Built a web-based sorting visualizer that animates sorting algorithms
+            step-by-step with adjustable speed and array size for better
+            conceptual understanding.
+          </p>
+        </div>
+      </div>
+
+      <!-- Documentation -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#sv-docs">
+          <i class="fas fa-chevron-right"></i>
+          Code & UI
+        </a>
+
+        <div class="collapse mt-3" id="sv-docs">
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <img src="{{ url_for('static', filename='projects/sortviz/ui.png') }}"
+                   class="img-fluid rounded project-img shadow-sm">
+            </div>
+            <div class="col-md-4 mb-3">
+              <img src="{{ url_for('static', filename='projects/sortviz/code1.png') }}"
+                   class="img-fluid rounded project-img shadow-sm">
+            </div>
+            <div class="col-md-4 mb-3">
+              <img src="{{ url_for('static', filename='projects/sortviz/code2.png') }}"
+                   class="img-fluid rounded project-img shadow-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mentor Reviews -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#sv-reviews">
+          <i class="fas fa-chevron-right"></i>
+          Mentor Reviews
+        </a>
+
+        <div class="collapse mt-3" id="sv-reviews">
+          <div class="row">
+
+            <!-- Mentor 1 -->
+            <div class="col-md-4 mb-3">
+              <div class="card h-100 shadow-sm border-0 review-card">
+                <div class="card-body">
+                  <p class="text-muted">
+                    Strong algorithmic clarity and an excellent visualization
+                    approach that makes complex concepts easy to grasp.
+                  </p>
+                </div>
+
+                <div class="card-footer bg-white border-0 d-flex align-items-center">
+                  <div class="position-relative mr-3">
+                    <a href="https://www.linkedin.com/in/aniruddha-m-agrawal/"
+                       target="_blank"
+                       referrerpolicy="no-referrer"
+                       class="d-inline-block">
+                      <img src="https://www.codetatva.in/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fani.68510287.jpeg&w=2048&q=75"
+                           class="rounded-circle"
+                           width="55" height="55"
+                           loading="lazy"
+                           alt="Aniruddha">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/aniruddha-m-agrawal/"
+                       target="_blank"
+                       class="linkedin-badge">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+
+                  <div>
+                    <strong>Aniruddha M Agrawal</strong><br>
+                    <small class="text-muted">
+                      DSA Mentor | Software Development Engineer @ Amazon
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- PROJECT 2 : SUSTAINABLE RESIDUE MANAGEMENT -->
+  <!-- ===================================================== -->
+
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+
+      <h4 class="mb-1">Sustainable Residue Management Platform</h4>
+      <p class="text-muted mb-4">Agricultural Waste Management System</p>
+
+      <!-- Problem -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#srm-problem">
+          <i class="fas fa-chevron-right"></i>
+          Problem Statement
+        </a>
+
+        <div class="collapse mt-2" id="srm-problem">
+          <p class="text-muted">
+            Crop residue burning causes severe air pollution due to the lack of
+            structured reuse and sustainable management mechanisms.
+          </p>
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#srm-solution">
+          <i class="fas fa-chevron-right"></i>
+          Solution
+        </a>
+
+        <div class="collapse mt-2" id="srm-solution">
+          <p class="text-muted">
+            Designed a platform to connect farmers and manufacturers for
+            efficient reuse of agricultural residue, reducing pollution and
+            promoting sustainability.
+          </p>
+        </div>
+      </div>
+
+      <!-- Patent Screenshots -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#srm-patents">
+          <i class="fas fa-chevron-right"></i>
+          Patent Document
+        </a>
+
+        <div class="collapse mt-3" id="srm-patents">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <img src="{{ url_for('static', filename='projects/srm/patent1.png') }}"
+                   class="img-fluid rounded  shadow-sm">
+            </div>
+            <div class="col-md-6 mb-3">
+              <img src="{{ url_for('static', filename='projects/srm/patent2.png') }}"
+                   class="img-fluid rounded  shadow-sm">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mentor Reviews -->
+      <div class="mb-3">
+        <a class="toggle-link font-weight-bold text-dark"
+           data-toggle="collapse"
+           href="#srm-reviews">
+          <i class="fas fa-chevron-right"></i>
+          Mentor Reviews
+        </a>
+
+        <div class="collapse mt-3" id="srm-reviews">
+          <div class="row">
+
+            <!-- Mentor 2 -->
+            <div class="col-md-4 mb-3">
+              <div class="card h-100 shadow-sm border-0 review-card">
+                <div class="card-body">
+                  <p class="text-muted">
+                    The project demonstrates a strong research-driven approach
+                    toward climate-smart agriculture and sustainable residue management.
+                  </p>
+                </div>
+
+                <div class="card-footer bg-white border-0 d-flex align-items-center">
+                  <div class="position-relative mr-3">
+                    <a href="https://www.linkedin.com/in/dr-sandeep-gawdiya-882598a3/"
+                       target="_blank"
+                       referrerpolicy="no-referrer"
+                       class="d-inline-block">
+                      <img src="https://media.licdn.com/dms/image/v2/D4D03AQEfkNZoOc_zFQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1683558606900?e=1767830400&v=beta&t=qEJ3d8dUQpHXIwms8xWXIu5nGcVGdYo-RY5XNX0rtuM"
+                           class="rounded-circle"
+                           width="55" height="55"
+                           loading="lazy"
+                           referrerpolicy="no-referrer"
+                           alt="Dr. Sandeep Gawdiya">
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/dr-sandeep-gawdiya-882598a3/"
+                       target="_blank"
+                       class="linkedin-badge">
+                      <i class="fab fa-linkedin-in"></i>
+                    </a>
+                  </div>
+
+                  <div>
+                    <strong>Dr. Sandeep Gawdiya</strong><br>
+                    <small class="text-muted">
+                      Assistant Professor (Agronomy), Galgotias University<br>
+                      PhD (Agronomy), IARI
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

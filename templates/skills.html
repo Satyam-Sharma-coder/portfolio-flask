@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block title %}Skills{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+  <h2 class="mb-4">Skills</h2>
+
+  <!-- ===================================================== -->
+  <!-- TECHNICAL SKILLS -->
+  <!-- ===================================================== -->
+
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+
+      <h4 class="mb-3">Technical Skills</h4>
+
+      <p class="text-muted">
+        My technical skill set is built through a combination of academic learning,
+        hands-on projects, and consistent problem-solving practice.
+      </p>
+
+      <ul class="mb-4">
+        <li><strong>Languages:</strong> Java, Python</li>
+        <li><strong>Backend:</strong> Flask</li>
+        <li><strong>Database:</strong> MySQL, SQLite</li>
+        <li><strong>Core CS:</strong> OOPs, DBMS, OS, CN</li>
+        <li><strong>DSA:</strong> Arrays, Linked List, Trees, Graphs, Tries</li>
+      </ul>
+
+      <!-- Learning Journey -->
+      <h6 class="mb-2">Learning Journey</h6>
+      <p class="text-muted">
+        I started my journey with Java and Python fundamentals, gradually strengthening
+        my understanding of object-oriented programming and core computer science concepts.
+        Regular practice on LeetCode and GFG helped me build problem-solving discipline.
+        Flask enabled me to apply backend logic in real-world applications, while databases
+        helped me manage structured and persistent data.
+      </p>
+
+      <!-- Skill Images -->
+      <div class="row mt-4">
+
+        <div class="col-md-4 mb-3">
+          <div class="border rounded shadow-sm d-flex align-items-center justify-content-center"
+               style="height: 220px; overflow: hidden;">
+            <img src="{{ url_for('static', filename='skills/dsa.png') }}"
+                 class="img-fluid"
+                 style="max-height: 100%; width: auto;"
+                 alt="DSA Practice">
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="border rounded shadow-sm d-flex align-items-center justify-content-center"
+               style="height: 220px; overflow: hidden;">
+            <img src="{{ url_for('static', filename='skills/flask.png') }}"
+                 class="img-fluid"
+                 style="max-height: 100%; width: auto;"
+                 alt="Flask Backend">
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="border rounded shadow-sm d-flex align-items-center justify-content-center"
+               style="height: 220px; overflow: hidden;">
+            <img src="{{ url_for('static', filename='skills/database.png') }}"
+                 class="img-fluid"
+                 style="max-height: 100%; width: auto;"
+                 alt="Database Design">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- TOOLS & PLATFORMS -->
+  <!-- ===================================================== -->
+
+  <div class="card shadow-sm mb-5">
+    <div class="card-body">
+
+      <h4 class="mb-3">Tools & Platforms</h4>
+
+      <p class="text-muted">
+        These tools form the backbone of my daily development workflow,
+        from coding and version control to API testing and competitive programming.
+      </p>
+
+      <ul class="mb-4">
+        <li>Git & GitHub</li>
+        <li>LeetCode, GFG, CodeChef</li>
+        <li>VS Code</li>
+        <li>Postman</li>
+      </ul>
+
+      <!-- Learning Journey -->
+      <h6 class="mb-2">Learning Journey</h6>
+      <p class="text-muted">
+        Git and GitHub helped me learn collaborative development and version control
+        best practices. Competitive programming platforms improved my consistency and
+        logical accuracy. VS Code became my primary IDE due to its flexibility, while
+        Postman enabled efficient testing and validation of REST APIs during backend
+        development.
+      </p>
+
+      <!-- Tool Images -->
+      <div class="row mt-4">
+
+        <div class="col-md-4 mb-3">
+          <div class="border rounded shadow-sm d-flex align-items-center justify-content-center"
+               style="height: 220px; overflow: hidden;">
+            <img src="{{ url_for('static', filename='skills/github.png') }}"
+                 class="img-fluid"
+                 style="max-height: 100%; width: auto;"
+                 alt="GitHub Workflow">
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="border rounded shadow-sm d-flex align-items-center justify-content-center"
+               style="height: 220px; overflow: hidden;">
+            <img src="{{ url_for('static', filename='skills/leetcode.png') }}"
+                 class="img-fluid"
+                 style="max-height: 100%; width: auto;"
+                 alt="Competitive Programming">
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <div class="border rounded shadow-sm d-flex align-items-center justify-content-center"
+               style="height: 220px; overflow: hidden;">
+            <img src="{{ url_for('static', filename='skills/postman.png') }}"
+                 class="img-fluid"
+                 style="max-height: 100%; width: auto;"
+                 alt="API Testing">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

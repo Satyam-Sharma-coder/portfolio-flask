@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block title %}About Me{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+  <!-- ================= INTRODUCTION ================= -->
+  <div class="text-center mb-5">
+    <h2>About Me</h2>
+    <p class="text-muted">
+      A brief overview of my journey, mindset, and growth as an aspiring software engineer.
+    </p>
+    <hr class="w-50 mx-auto">
+  </div>
+
+  <!-- ================= SNAPSHOT ================= -->
+  <div class="row align-items-center mb-5">
+
+    <div class="col-md-4 text-center mb-3">
+      <img src="{{ url_for('static', filename='about/profile.jpg') }}"
+           class="img-fluid rounded-circle shadow"
+           style="width: 220px; height: 220px; object-fit: cover;"
+           alt="Satyam Sharma">
+    </div>
+
+    <div class="col-md-8">
+      <p class="text-muted">
+        I am a Computer Science Engineering student with a strong interest in
+        backend development, problem solving, and building logic.
+        I enjoy learning through hands-on projects, structured practice,
+        and real-world exposure.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ================= LEARNING MINDSET ================= -->
+  <div class="mb-5">
+    <h3 class="mb-3">My Learning Mindset</h3>
+    <p class="text-muted">
+      I believe learning is most effective when driven by curiosity and consistency.
+      Rather than rushing for results, I focus on understanding concepts deeply
+      and improving incrementally.
+    </p>
+    <p class="text-muted">
+      Debugging, revisiting fundamentals, and applying concepts in projects
+      are core parts of how I learn and grow.
+    </p>
+  </div>
+
+  <!-- ================= GOALS ================= -->
+  <div class="mb-5">
+    <h3 class="mb-3">What I’m Working Towards</h3>
+    <p class="text-muted">
+      My goal is to become a software engineer capable of designing efficient
+      backend systems and solving complex problems with clarity.
+    </p>
+
+    <ul class="text-muted">
+      <li>Strengthening DSA and problem-solving consistency</li>
+      <li>Building backend-driven applications using Flask</li>
+      <li>Deepening core CS fundamentals (DBMS, OS, CN)</li>
+      <li>Applying learning through hackathons and projects</li>
+    </ul>
+  </div>
+
+  <!-- ================= SIH ================= -->
+  <div class="mb-5">
+    <h3 class="mb-3">Smart India Hackathon (SIH)</h3>
+    <p class="text-muted">
+      During Smart India Hackathon, I worked with my team on a real-world problem,
+      focusing on solution design, feasibility, and collaboration under time constraints.
+      This experience strengthened my teamwork and problem-structuring skills.
+    </p>
+
+    <div class="row mt-4">
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='about/sih_certificate.png') }}"
+             class="img-fluid rounded shadow"
+             style="height: 220px; object-fit: cover;"
+             alt="SIH Certificate">
+        <p class="text-center text-muted mt-2">SIH Certificate</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='about/sih_work1.png') }}"
+             class="img-fluid rounded shadow"
+             style="height: 220px; object-fit: cover;"
+             alt="SIH Work 1">
+        <p class="text-center text-muted mt-2">Project Development</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='about/sih_work2.png') }}"
+             class="img-fluid rounded shadow"
+             style="height: 220px; object-fit: cover;"
+             alt="SIH Work 2">
+        <p class="text-center text-muted mt-2">Solution Design Phase</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= NSS ================= -->
+  <div class="mb-5">
+    <h3 class="mb-3">NSS Journey (2023–2024)</h3>
+    <p class="text-muted">
+      As a part of the National Service Scheme (NSS), I actively participated
+      in community-oriented activities that helped me develop leadership,
+      discipline, and social responsibility beyond academics.
+    </p>
+
+    <div class="row mt-4">
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='about/nss_activity1.jpg') }}"
+             class="img-fluid rounded shadow"
+             style="height: 220px; object-fit: cover;"
+             alt="NSS Activity 1">
+        <p class="text-center text-muted mt-2">Community Engagement</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='about/nss_activity2.jpg') }}"
+             class="img-fluid rounded shadow"
+             style="height: 220px; object-fit: cover;"
+             alt="NSS Activity 2">
+        <p class="text-center text-muted mt-2">Awareness Activities</p>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <img src="{{ url_for('static', filename='about/nss_group.jpg') }}"
+             class="img-fluid rounded shadow"
+             style="height: 220px; object-fit: cover;"
+             alt="NSS Group">
+        <p class="text-center text-muted mt-2">NSS Team</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CLOSING ================= -->
+  <div class="text-center mb-5">
+    <hr class="w-50 mx-auto">
+    <p class="lead font-italic">
+      I may still be learning, but I approach every challenge with discipline,
+      responsibility, and the intent to grow consistently.
+    </p>
+  </div>
+
+</div>
+
+{% endblock %}
