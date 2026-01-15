@@ -6,21 +6,21 @@
 
 <div class="container mt-4">
 
-  <!-- ✅ 1. TITLE -->
+
   <h2 class="text-center mb-4">📊 LeetCode Dashboard — {{ data.username }}</h2>
 
 
-  <!-- Action Section -->
+
 <div class="d-flex justify-content-center flex-wrap align-items-center mb-4">
 
-  <!-- Analyze LeetCode Profile (External Tool) -->
+
   <a href="https://leetcode-scapper-for-all.onrender.com/"
      target="_blank"
      class="btn btn-primary mr-3 mb-2">
     Analyze Any LeetCode Profile
   </a>
 
-  <!-- My LeetCode Profile -->
+
   <a href="https://leetcode.com/satyam15890/"
      target="_blank"
      class="btn btn-outline-dark mb-2">
@@ -35,7 +35,7 @@
 
 </div>
 
-  <!-- ✅ 2. OFFICIAL ACTIVITY SUMMARY -->
+
   <div class="row mt-5 text-center d-flex align-items-stretch">
 
     <div class="col-md-4 mb-3 d-flex">
@@ -85,7 +85,7 @@
     {% endfor %}
   </div>
 
-  <!-- ✅ 4. SKILL STATS -->
+
   <div class="row mt-5 d-flex align-items-stretch">
     <div class="col-md-12">
       <h3 class="text-center mb-4">🧠 Skill-wise Problem Solving</h3>
@@ -117,7 +117,7 @@
     {% endfor %}
   </div>
 
-  <!-- ✅ 5. CONTEST STATS -->
+
   <div class="row mt-5 text-center">
     <div class="col-md-3 mb-3"><div class="card shadow-sm border-success"><div class="card-body"><h6>Contests</h6><p class="h4 text-success">{{ data.contest.attendedContestsCount }}</p></div></div></div>
     <div class="col-md-3 mb-3"><div class="card shadow-sm border-primary"><div class="card-body"><h6>Rating</h6><p class="h4 text-primary">{{ data.contest.rating }}</p></div></div></div>
@@ -125,7 +125,7 @@
     <div class="col-md-3 mb-3"><div class="card shadow-sm border-danger"><div class="card-body"><h6>Top %</h6><p class="h4 text-danger">{{ data.contest.topPercentage }}</p></div></div></div>
   </div>
 
-  <!-- 📈 LIVE CONTEST RATING GRAPH -->
+
 <div class="row mt-5">
   <div class="col-md-12">
     <h3 class="text-center mb-3">📈 Contest Rating Progress</h3>
@@ -161,7 +161,7 @@ new Chart(document.getElementById('ratingChart'), {
 </script>
 
 
-  <!-- ✅ 6. CONTEST HISTORY -->
+
   <div class="row mt-5">
     <div class="col-md-12">
       <h3 class="text-center mb-3">🏆 Contest History</h3>
@@ -184,7 +184,7 @@ new Chart(document.getElementById('ratingChart'), {
     </div>
   </div>
 
-  <!-- ✅ 7. BADGES -->
+
   <div class="row mt-5">
     <div class="col-md-12">
       <h3 class="text-center mb-4">🏅 Earned Badges</h3>
@@ -203,7 +203,6 @@ new Chart(document.getElementById('ratingChart'), {
     {% endfor %}
   </div>
 
-  <!-- ✅ 8. RECENT SUBMISSIONS (LAST) -->
   <div class="row mt-5">
     <div class="col-md-12">
       <h4>✅ Recent Accepted Submissions</h4>
