@@ -7,7 +7,10 @@
 <div class="container mt-4">
 
 
-  <h2 class="text-center mb-4">📊 LeetCode Dashboard — {{ data.username }}</h2>
+  <h2 class="text-center mb-4">
+  <i class="fas fa-chart-line mr-2 text-primary"></i>
+  LeetCode Performance Dashboard — {{ data.username }}
+</h2>
 
 
 
@@ -41,7 +44,9 @@
     <div class="col-md-4 mb-3 d-flex">
       <div class="card shadow-sm border-success w-100 h-100">
         <div class="card-body d-flex flex-column justify-content-center">
-          <h5>🔥 Official Streak</h5>
+          <h6 class="text-muted">
+          <i class="fas fa-bolt mr-1"></i> Current Streak
+        </h6>
           <p class="display-4 text-success">{{ data.streak }}</p>
         </div>
       </div>
@@ -50,7 +55,9 @@
     <div class="col-md-4 mb-3 d-flex">
       <div class="card shadow-sm border-primary w-100 h-100">
         <div class="card-body d-flex flex-column justify-content-center">
-          <h5>📅 Total Active Days</h5>
+          <h6 class="text-muted">
+          <i class="fas fa-calendar-check mr-1"></i> Active Days
+        </h6>
           <p class="display-4 text-primary">{{ data.total_active_days }}</p>
         </div>
       </div>
@@ -59,7 +66,9 @@
     <div class="col-md-4 mb-3 d-flex">
       <div class="card shadow-sm border-warning w-100 h-100">
         <div class="card-body d-flex flex-column justify-content-center">
-          <h5>📆 Active Years</h5>
+          <h6 class="text-muted">
+          <i class="fas fa-history mr-1"></i> Active Years
+        </h6>
           <p class="h4 text-warning">{{ data.active_years }}</p>
         </div>
       </div>
@@ -68,6 +77,10 @@
   </div>
 
   <!-- ✅ 3. EASY / MEDIUM / HARD SOLVED -->
+  <h3 class="text-center mt-5 mb-4">
+  Problem Solving by Difficulty
+</h3>
+
   <div class="row text-center mt-5">
     {% for diff in ['Easy','Medium','Hard'] %}
     <div class="col-md-4 mb-3">
@@ -88,7 +101,10 @@
 
   <div class="row mt-5 d-flex align-items-stretch">
     <div class="col-md-12">
-      <h3 class="text-center mb-4">🧠 Skill-wise Problem Solving</h3>
+      <h3 class="text-center mb-4">
+  <i class="fas fa-brain mr-2"></i>
+  Skill-wise Problem Solving Analysis
+</h3>
     </div>
 
     {% for level in ['fundamental','intermediate','advanced'] %}
@@ -128,7 +144,10 @@
 
 <div class="row mt-5">
   <div class="col-md-12">
-    <h3 class="text-center mb-3">📈 Contest Rating Progress</h3>
+    <h3 class="text-center mb-3">
+  <i class="fas fa-chart-area mr-2"></i>
+  Contest Rating Trend
+</h3>
     <canvas id="ratingChart"></canvas>
   </div>
 </div>
@@ -164,7 +183,10 @@ new Chart(document.getElementById('ratingChart'), {
 
   <div class="row mt-5">
     <div class="col-md-12">
-      <h3 class="text-center mb-3">🏆 Contest History</h3>
+      <h3 class="text-center mb-3">
+  <i class="fas fa-trophy mr-2"></i>
+  Contest History
+</h3>
       <table class="table table-bordered table-hover">
         <thead class="thead-dark">
           <tr><th>Contest</th><th>Attended</th><th>Solved</th><th>Rating</th><th>Rank</th></tr>
@@ -173,7 +195,13 @@ new Chart(document.getElementById('ratingChart'), {
           {% for c in data.contest_history %}
           <tr>
             <td>{{ c.contest.title }}</td>
-            <td>{% if c.attended %}✅{% else %}❌{% endif %}</td>
+            <td>
+  {% if c.attended %}
+    <i class="fas fa-check-circle text-success"></i>
+  {% else %}
+    <i class="fas fa-times-circle text-danger"></i>
+  {% endif %}
+</td>
             <td>{{ c.problemsSolved }}/{{ c.totalProblems }}</td>
             <td>{{ c.rating }}</td>
             <td>{{ c.ranking }}</td>
@@ -187,7 +215,10 @@ new Chart(document.getElementById('ratingChart'), {
 
   <div class="row mt-5">
     <div class="col-md-12">
-      <h3 class="text-center mb-4">🏅 Earned Badges</h3>
+      <h3 class="text-center mb-4">
+  <i class="fas fa-certificate mr-2"></i>
+  Earned Badges
+</h3>
     </div>
     {% for badge in data.badges %}
     <div class="col-md-3 mb-4">
@@ -205,7 +236,10 @@ new Chart(document.getElementById('ratingChart'), {
 
   <div class="row mt-5">
     <div class="col-md-12">
-      <h4>✅ Recent Accepted Submissions</h4>
+      <h4>
+  <i class="fas fa-check-circle mr-2 text-success"></i>
+  Recent Accepted Submissions
+</h4>
       <table class="table table-bordered mt-3 table-hover">
         <thead class="thead-dark">
           <tr><th>Title</th><th>Problem Link</th><th>Timestamp</th></tr>
